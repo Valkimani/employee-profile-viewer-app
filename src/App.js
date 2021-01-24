@@ -1,9 +1,8 @@
-// import logo from './logo.svg';
-import React from 'react'
-import './App.css';
+import React from "react";
+import Table from "./components/Table";
 
 function App() {
-      return <HelloReact />;
-    }
+  return <Table />;
+}
 
 export default App;
