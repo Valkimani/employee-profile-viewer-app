@@ -1,17 +1,36 @@
-import React from "react";
+// import React from "react";
+import React, {Component} from 'react';
 import Header from "./components/Header";
-import Table from "./components/Table";
+// import ReactTable from "react-table";
+// import {useTable} from 'react-table'
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Table />
-    </div>
+      <div>
+          <Header />
+      </div>
   );
-}
+};
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
 
