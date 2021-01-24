@@ -1,6 +1,7 @@
 // import React from "react";
 import React, {Component} from 'react';
 import Header from "./components/Header";
+import SearchBtn from "./components/SearchBtn";
 // import ReactTable from "react-table";
 // import {useTable} from 'react-table'
 
