@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.css";
-import Card from '../Card';
+import "src/styles/RecordHeader";
+import Card from './Card';
 
 class RecordHeader extends React.Component {
     state = {
