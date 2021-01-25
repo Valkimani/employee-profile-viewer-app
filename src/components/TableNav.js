@@ -1,8 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactTable from "react-table";
-
-
+import RecordHeader from './RecordHeader';
 
 
 class TableNav extends React.Component {
@@ -34,28 +32,27 @@ handleInputChange = event => {
         filteredEmployees: filteredList
     });
 }
-
-
+render () {
+    return (
+        <div>
+            <form className ="form">
+<input 
+value={this.state.searchWord}
+name="searchWord"
+onChange={event => this.handleInputChange (event)}
+type="text"
+placeholder="Search"
+/>
+            </form>
+            {this.state.filteredEmployees.length > 0 &&
+            
+            <RecordHeader empList={this.state.filteredEmployees} />
+}
+        </div>
+    );
+};
 }
 
-// render () {
-//     return (
-//         <div>
-//             <form className ="form">
-// <input 
-// value={this.state.searchWord}
-// name="searchWord"
-// onChange={event => this.handleInputChange (event)}
-// type="text"
-// placeholder="Search"
-// />
-//             </form>
-//             {this.state.filteredEmployees.length > 0 &&
-            
-//             <ListHeader empList={this.state.filteredEmployees} />
-// }
-//         </div>
-//     );
-// };
+
 
 export default TableNav;
