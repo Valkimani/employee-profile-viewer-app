@@ -1,12 +1,19 @@
 import React from 'react';
-// import ".css";
+import "./styles.Card";
 
 function Card (props) {
     return (
-        <div>
-            
+    
+            <div className="card">
+            <div><img alt={props.last} src={props.image}></img></div>
+            <div>{props.title} {props.first} {props.last} </div>
+            <div>{props.phone}</div>
+           <div>{props.email}</div>
+            <div>{props.dob}</div>
         </div>
     );
-};
+}
 
+
+        
 export default Card;
