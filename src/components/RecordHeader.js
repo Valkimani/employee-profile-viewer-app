@@ -1,5 +1,5 @@
 import React from "react";
-import "src/styles/RecordHeader";
+import "../styles/RecordHeader.css";
 import Card from './Card';
 
 class RecordHeader extends React.Component {
