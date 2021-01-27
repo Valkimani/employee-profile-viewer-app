@@ -1,5 +1,5 @@
 import React from 'react';
-import "src"
+import "../styles/PageLoad.css";
 
 class PageLoad extends React.Component {
     render (){
