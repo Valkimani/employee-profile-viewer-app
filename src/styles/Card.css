@@ -2,8 +2,8 @@
     align-items: center;
     display: grid;
     font-weight: bold;
-    grid-template-columns: 20% 25% 5% 5% 15% 30%;
-    grid-template-rows: 180px;
+    grid-template-columns: 20% 20% 18% 18% 18% 18%;
+    grid-template-rows: 80px;
     grid-gap: 5px;
     text-align: center;
     vertical-align: middle;

@@ -10,23 +10,24 @@ class RecordHeader extends React.Component {
         employees: []
     }
     componentDidMount() {
+        console.log(this.props.employees)
         if (this.state.sortedEmployees.length < 1) {
             this.setState({
-                sortedEmployees: this.props.empRecord
+                sortedEmployees: this.props.employees
             })
         }
     }
     componentDidUpdate(prevProps) {
-        if (this.props.empRecord !== prevProps.empRecord) {
+        if (this.props.employees !== prevProps.employees) {
             this.setState({
-                sortedEmployees: this.props.empRecord
+                sortedEmployees: this.props.employees
             })
         }
     }
     sortName = () => {
         let sortEmp = [];
         if (this.state.alphabetical) {
-            sortEmp = this.props.empRecord.sort((a, b) => {
+            sortEmp = this.props.employees.sort((a, b) => {
                 var nameA = a.name.last.toLowerCase(), nameB = b.name.last.toLowerCase();
                 if (nameA < nameB)
                     return -1
@@ -35,7 +36,7 @@ class RecordHeader extends React.Component {
                 return 0
             })
         } else {
-            sortEmp = this.props.empRecord.sort((a, b) => {
+            sortEmp = this.props.employees.sort((a, b) => {
                 var nameA = a.name.last.toLowerCase(), nameB = b.name.last.toLowerCase();
                 if (nameA > nameB)
                     return -1
@@ -52,7 +53,7 @@ class RecordHeader extends React.Component {
     sortPhone = () => {
         let sortEmp = [];
         if (this.state.ascending) {
-            sortEmp = this.props.empRecord.sort((a, b) => {
+            sortEmp = this.props.employees.sort((a, b) => {
                 var nameA = a.dob.phone, nameB = b.dob.phone
                 if (nameA < nameB)
                     return -1
@@ -61,8 +62,8 @@ class RecordHeader extends React.Component {
                 return 0
             })
         } else {
-            sortEmp = this.props.empRecord.sort((a, b) => {
-                var nameA = a.dob.age, nameB = b.dob.age;
+            sortEmp = this.props.employees.sort((a, b) => {
+                var nameA = a.dob, nameB = b.dob;
                 if (nameA > nameB)
                     return -1
                 if (nameA < nameB)
@@ -81,7 +82,7 @@ class RecordHeader extends React.Component {
                 <div className="header">
                     <div>Photo</div>
                     <div><p onClick={this.sortName} className="name">Name</p> </div>
-                    <div><p onClick={this.sortPhone} className="age">Phone</p></div>
+                    {/* <div><p onClick={this.sortPhone} className="">Phone</p></div> */}
                     <div>Phone</div>
                     <div>E-mail</div>
                     <div>DOB</div>
@@ -90,12 +91,12 @@ class RecordHeader extends React.Component {
                     this.state.sortedEmployees.length > 0 &&
                     this.state.sortedEmployees.map((item, index) => (
                             <Card
-                                image={item.picture.large}
+                                // image={item.picture.large}
                                 first={item.name.first}
                                 last={item.name.last}
-                                phone={item.cell}
+                                phone={item.phone}
                                 email={item.email}
-                                age={item.age}
+                                dob={item.dob.date}
                                 
                             />
                     ))

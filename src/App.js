@@ -1,5 +1,5 @@
 // import React from "react";
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 // import axios from "axios"
 import API from "./utils/API";
 import Header from "./components/Header";
@@ -11,28 +11,33 @@ import RecordHeader from './components/RecordHeader';
 
 
 
-const App = () => {
+
+function App() {
+  // employees array will start out as an empty array
+
+  const [employees, setEmployees] = useState([]);
+
   // calling useEffect to run the function one time
   useEffect(
     () =>{
 
       API.search ().then
       ((res) => {
-      //   setDeveloperState(res);
+        setEmployees(res.data.results);
         console.log("Developer State:");
-        console.log(res);});
+        console.log(res.data.results);});
 console.log("Ran once!")
     },[]
   )
   
   return (
       <div>
-          <Header />
-          <Card />
+          <Header employees={employees} />
+          {/* <Card /> */}
           <SearchBtn />
-          <TableNav />
+          <TableNav employees={employees} />
           <PageLoad />
-          <RecordHeader/>
+          <RecordHeader employees={employees} />
         
       </div>
   );

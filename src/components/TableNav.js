@@ -12,9 +12,9 @@ state={
 // Adding a compoundDidMount to make the app interact with the browser//
 componentDidMount() {
     if (this.state.filteredEmployees.length < 1) {
-        // this.setState({
-        //     filteredEmployees: this.props.employees
-        // })
+        this.setState({
+            filteredEmployees: this.props.employees
+        })
         console.log(this.props.employees)
     }
 }

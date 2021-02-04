@@ -3,9 +3,7 @@ import "../styles/SearchBtn.css";
 
 const SearchBtn = () => {
     return (
-        <div>
-            <button>Search</button>
-        </div>
+    <div>{SearchBtn}</div>
     );
 };
 
